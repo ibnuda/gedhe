@@ -90,7 +90,7 @@ module alpha_holes(width = 14)
 {
     for (j = [0:3]) {
         for (i = [0:5]) {
-            translate([ (30 + i * 19), (stagger[i] - j * 19), 0 ])
+            translate([ (33 + i * 19), (stagger[i] - j * 19), 0 ])
             {
                 square(size = [ width, width ], center = true);
             }
@@ -102,6 +102,16 @@ module thumb_holes(width = 14)
 {
     union()
     {
+        translate([71, -117, 0]) {
+            rotate([0, 0, 0]) {
+                square(size=[width, width], center=true);
+            }
+        }
+        translate([90, -117, 0]) {
+            rotate([0, 0, 0]) {
+                square(size=[width, width], center=true);
+            }
+        }
         translate([109, -117, 0]) {
             rotate([0, 0, 0]) {
                 square(size=[width, width], center=true);
@@ -151,4 +161,10 @@ shape_of_pcb()
         translate([ 87, -128 ]) sector(11, [100, -100], 360);
         translate([ 99, -235 ]) sector(107, [50, 95], 360);
     }
+}
+
+module
+pcb_outline()
+{
+    offset(r = 1) import("pcb-outline.dxf");
 }

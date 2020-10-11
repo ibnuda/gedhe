@@ -514,7 +514,7 @@ Connection ~ 3750 3250
 Wire Wire Line
 	3750 3250 4550 3250
 Wire Wire Line
-	3750 3950 4550 3950
+	2100 3950 2950 3950
 Text GLabel 6250 1150 2    50   Input ~ 0
 ROW0
 Text GLabel 6250 1850 2    50   Input ~ 0
@@ -540,9 +540,9 @@ NoConn ~ 7775 1175
 Text GLabel 7775 1375 0    50   Input ~ 0
 SDA
 Wire Wire Line
-	3550 2900 3550 4400
+	3550 2900 3550 3600
 Wire Wire Line
-	2700 2900 2700 4400
+	2700 2900 2700 3600
 NoConn ~ 10525 1125
 Text GLabel 10525 1025 2    50   Input ~ 0
 SDA
@@ -913,4 +913,64 @@ F 3 "" H 8575 575 60  0000 C CNN
 $EndComp
 Text GLabel 7775 1975 0    50   Input ~ 0
 COL5
+$Comp
+L gedhe:switch SW29
+U 1 1 5F8309F0
+P 3250 3600
+F 0 "SW29" H 3250 3855 50  0000 C CNN
+F 1 "switch" H 3250 3764 50  0000 C CNN
+F 2 "footprints:1u-dual" H 3250 3600 60  0001 C CNN
+F 3 "" H 3250 3600 60  0000 C CNN
+	1    3250 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L gedhe:diode D29
+U 1 1 5F830C38
+P 2950 3900
+F 0 "D29" H 2822 3850 60  0000 R CNN
+F 1 "D" V 3100 3850 60  0001 C CNN
+F 2 "footprints:diode" H 2950 3900 60  0001 C CNN
+F 3 "" H 2950 3900 60  0000 C CNN
+	1    2950 3900
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2950 3600 2950 3750
+Connection ~ 3550 3600
+Wire Wire Line
+	3550 3600 3550 4400
+$Comp
+L gedhe:switch SW28
+U 1 1 5F83779E
+P 2400 3600
+F 0 "SW28" H 2400 3855 50  0000 C CNN
+F 1 "switch" H 2400 3764 50  0000 C CNN
+F 2 "footprints:1u-dual" H 2400 3600 60  0001 C CNN
+F 3 "" H 2400 3600 60  0000 C CNN
+	1    2400 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L gedhe:diode D28
+U 1 1 5F837922
+P 2100 3900
+F 0 "D28" H 1972 3850 60  0000 R CNN
+F 1 "D" V 2250 3850 60  0001 C CNN
+F 2 "footprints:diode" H 2100 3900 60  0001 C CNN
+F 3 "" H 2100 3900 60  0000 C CNN
+	1    2100 3900
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2100 3600 2100 3750
+Connection ~ 2700 3600
+Wire Wire Line
+	2700 3600 2700 4400
+Connection ~ 2950 3950
+Wire Wire Line
+	2950 3950 3750 3950
+Connection ~ 3750 3950
+Wire Wire Line
+	3750 3950 4550 3950
 $EndSCHEMATC
