@@ -534,7 +534,7 @@ COL3
 Text GLabel 5150 4400 3    50   Input ~ 0
 COL4
 Wire Wire Line
-	1900 2900 1900 4400
+	1900 2900 1900 3600
 NoConn ~ 7775 1075
 NoConn ~ 7775 1175
 Text GLabel 7775 1375 0    50   Input ~ 0
@@ -973,4 +973,34 @@ Wire Wire Line
 Connection ~ 3750 3950
 Wire Wire Line
 	3750 3950 4550 3950
+$Comp
+L gedhe:switch SW30
+U 1 1 5F8501A7
+P 1600 3600
+F 0 "SW30" H 1600 3855 50  0000 C CNN
+F 1 "switch" H 1600 3764 50  0000 C CNN
+F 2 "footprints:1u-dual" H 1600 3600 60  0001 C CNN
+F 3 "" H 1600 3600 60  0000 C CNN
+	1    1600 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L gedhe:diode D30
+U 1 1 5F85033B
+P 1300 3900
+F 0 "D30" H 1172 3850 60  0000 R CNN
+F 1 "D" V 1450 3850 60  0001 C CNN
+F 2 "footprints:diode" H 1300 3900 60  0001 C CNN
+F 3 "" H 1300 3900 60  0000 C CNN
+	1    1300 3900
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	1300 3600 1300 3750
+Connection ~ 1900 3600
+Wire Wire Line
+	1900 3600 1900 4400
+Wire Wire Line
+	1300 3950 2100 3950
+Connection ~ 2100 3950
 $EndSCHEMATC

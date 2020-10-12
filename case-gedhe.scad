@@ -64,11 +64,11 @@ translate([0, 0, -1]) {
 // middle_plate();
 // pcb_shape();
 // shape_of_pcb();
-sandwich();
+// sandwich();
 // middle_plate();
 
 translate([0, 0, 7]) {
-    color("beige") switch_plate();
+    // color("beige") switch_plate();
 }
 
 mirror([1, 0, 0]) {

@@ -77,10 +77,10 @@ white_space()
             [ 140, -66 ],
         ]);
         polygon(points=[
-            [ 190, -79 ],
-            [ 190, -93 ],
-            [ 148, -93 ],
-            [ 148, -79 ],
+            [ 190, -73 ],
+            [ 190, -87 ],
+            [ 148, -87 ],
+            [ 148, -73 ],
         ]);
     }
 }
@@ -166,5 +166,5 @@ shape_of_pcb()
 module
 pcb_outline()
 {
-    offset(r = 1) import("pcb-outline.dxf");
+    offset(r = 0.5) import("pcb-outline.dxf");
 }
