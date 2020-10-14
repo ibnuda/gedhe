@@ -36,12 +36,12 @@ sandwich()
 {
     difference()
     {
-        linear_extrude(height = 7) bottom_plate();
+        linear_extrude(height = 8) bottom_plate();
         // linear_extrude(height = 3.5) shape_of_pcb();
-        linear_extrude(height = 3.5) pcb_outline();
-        linear_extrude(height = 8) white_space();
-        linear_extrude(height = 8) alpha_holes();
-        linear_extrude(height = 8) thumb_holes();
+        translate([0, 0, -1]) linear_extrude(height = 5.5) pcb_outline();
+        translate([0, 0, -1]) linear_extrude(height = 10) white_space();
+        translate([0, 0, -1]) linear_extrude(height = 10) alpha_holes();
+        translate([0, 0, -1]) linear_extrude(height = 10) thumb_holes();
     }
 }
 
@@ -58,13 +58,13 @@ switch_plate()
 }
 
 translate([0, 0, -1]) {
-    color("navy") bottom_plate();
+    // color("navy") bottom_plate();
 }
 // linear_extrude(height = 7)
 // middle_plate();
 // pcb_shape();
 // shape_of_pcb();
-// sandwich();
+sandwich();
 // middle_plate();
 
 translate([0, 0, 7]) {

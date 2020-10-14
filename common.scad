@@ -127,6 +127,11 @@ module thumb_holes(width = 14)
                 square(size=[width, width], center=true);
             }
         }
+        translate([148, -102, 0]) {
+            rotate([0, 0, 0]) {
+                square(size=[width, width], center=true);
+            }
+        }
     }
 }
 
