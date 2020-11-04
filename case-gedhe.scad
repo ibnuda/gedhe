@@ -61,10 +61,10 @@ translate([0, 0, -1]) {
     // color("navy") bottom_plate();
 }
 // linear_extrude(height = 7)
-// middle_plate();
+middle_plate();
 // pcb_shape();
 // shape_of_pcb();
-sandwich();
+// sandwich();
 // middle_plate();
 
 translate([0, 0, 7]) {

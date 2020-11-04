@@ -1,10 +1,9 @@
-
 tenting_screw_positions = [
-    [ 13, -80 ],
-    [ 45, -20 ],
-    [ 127, -18 ],
-    [ 173, -50 ],
-    [ 165, -140 ],
+    [ 15, -80 ],
+    [ 45, -21 ],
+    [ 127, -17.5 ],
+    [ 171, -50 ],
+    [ 164, -138 ],
 ];
 
 tightening_screw_positions = [
@@ -56,7 +55,7 @@ tenting_wing()
 module
 tenting_hole()
 {
-    circle(r = 3.2);
+    circle(r = 3.2, $fn = 60);
 }
 
 module
