@@ -55,7 +55,7 @@ tenting_wing()
 module
 tenting_hole()
 {
-    circle(r = 3.2, $fn = 60);
+    circle(r = 3.2);
 }
 
 module
@@ -69,13 +69,13 @@ white_space()
 {
     union()
     {
-        polygon(points=[
+        polygon(points = [
             [ 160, -66 ],
             [ 160, -0 ],
             [ 140, -0 ],
             [ 140, -66 ],
         ]);
-        polygon(points=[
+        polygon(points = [
             [ 190, -73 ],
             [ 190, -87 ],
             [ 148, -87 ],
@@ -83,7 +83,6 @@ white_space()
         ]);
     }
 }
-
 
 module alpha_holes(width = 14)
 {
@@ -97,40 +96,47 @@ module alpha_holes(width = 14)
     }
 }
 
+thumb_location = [
+    [ 71, -117 ],
+    [ 90, -117 ],
+    [ 109, -117 ],
+    [ 130.2, -119.8 ],
+    [ 150, -128 ],
+    [ 148, -102 ]
+];
+thumb_rotation = [ 0, 0, 0, 345, 330, 0 ];
+
+module
+caps()
+{
+    for (j = [0:3])
+        for (i = [0:5])
+            translate([ (33 + i * 19), (stagger[i] - j * 19), 25 ])
+                cube(size = [ 18, 18, 20 ], center = true);
+    for (i = [0:5])
+        translate([ 0, 0, 25 ]) translate(thumb_location[i])
+            rotate(thumb_rotation[i])
+                cube(size = [ 18, 18, 20 ], center = true);
+}
+
 module thumb_holes(width = 14)
 {
     union()
     {
-        translate([71, -117, 0]) {
-            rotate([0, 0, 0]) {
-                square(size=[width, width], center=true);
-            }
-        }
-        translate([90, -117, 0]) {
-            rotate([0, 0, 0]) {
-                square(size=[width, width], center=true);
-            }
-        }
-        translate([109, -117, 0]) {
-            rotate([0, 0, 0]) {
-                square(size=[width, width], center=true);
-            }
-        }
-        translate([130.2, -119.8, 0]) {
-            rotate([0, 0, 345]) {
-                square(size=[width, width], center=true);
-            }
-        }
-        translate([150, -128, 0]) {
-            rotate([0, 0, 330]) {
-                square(size=[width, width], center=true);
-            }
-        }
-        translate([148, -102, 0]) {
-            rotate([0, 0, 0]) {
-                square(size=[width, width], center=true);
-            }
-        }
+        translate([ 71, -117, 0 ]) rotate([ 0, 0, 0 ])
+            square(size = [ width, width ], center = true);
+        translate([ 90, -117, 0 ]) rotate([ 0, 0, 0 ])
+            square(size = [ width, width ], center = true);
+        translate([ 109, -117, 0 ]) rotate([ 0, 0, 0 ])
+            square(size = [ width, width ], center = true);
+        translate([ 130.2, -119.8, 0 ]) rotate([ 0, 0, 345 ])
+            square(size = [ width, width ], center = true);
+        translate([ 150, -128, 0 ]) rotate([ 0, 0, 330 ])
+            square(size = [ width, width ], center = true);
+        additional_width = (width > 15) ? (width + 2) : width;
+        x_translation = (width > 15) ? 147 : 148;
+        translate([ x_translation, -102, 0 ]) rotate([ 0, 0, 0 ])
+            square(size = [ additional_width, width ], center = true);
     }
 }
 
@@ -152,7 +158,7 @@ shape_of_pcb()
             polygon(points = [
                 [ 140, -27 ],
                 [ 22.32, -38.87 ],
-                [ 22.32, -117  ],
+                [ 22.32, -117 ],
                 [ 88, -117 ],
                 [ 88, -128 ],
                 [ 154, -143 ],
@@ -162,8 +168,8 @@ shape_of_pcb()
             ]);
         }
         // translate([ 29, -231 ]) sector(144.4, lower_angles, 75);
-        translate([ 87, -128 ]) sector(11, [100, -100], 360);
-        translate([ 99, -235 ]) sector(107, [50, 95], 360);
+        translate([ 87, -128 ]) sector(11, [ 100, -100 ], 360);
+        translate([ 99, -235 ]) sector(107, [ 50, 95 ], 360);
     }
 }
 
